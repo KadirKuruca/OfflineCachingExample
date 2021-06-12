@@ -20,7 +20,7 @@ data class Movie(
 ){
     val poster_url: String? get(){
         poster_path?.let {
-            return API_URL+"/t/p/w500"+poster_path
+            return "https://image.tmdb.org/t/p/w500/"+poster_path
         }
         return null
     }

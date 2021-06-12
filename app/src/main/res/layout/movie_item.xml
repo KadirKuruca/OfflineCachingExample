@@ -1,73 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
-    android:padding="8dp">
+    app:cardCornerRadius="4dp"
+    app:cardElevation="8dp"
+    android:layout_margin="8dp">
 
-    <ImageView
-        android:id="@+id/iv_logo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        tools:src="@mipmap/ic_launcher"/>
-
-    <TextView
-        android:id="@+id/tv_movie_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/iv_logo"
-        tools:text="Cruella"
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
-        android:layout_marginStart="8dp"/>
-
-    <TextView
-        android:id="@+id/tv_release_date"
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_movie_name"
-        android:layout_toEndOf="@+id/iv_logo"
-        tools:text="2021-05-26"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="14sp"
-        android:layout_marginStart="10dp"/>
+        android:layout_height="wrap_content">
 
-    <ImageView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:src="@android:drawable/star_on"
-        android:layout_below="@+id/tv_movie_name"
-        android:layout_toStartOf="@+id/tv_rate"
-        android:layout_marginEnd="2dp"
-        app:tint="#FFC107" />
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            tools:src="@mipmap/ic_launcher"/>
 
-    <TextView
-        android:id="@+id/tv_rate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_movie_name"
-        android:gravity="right"
-        android:layout_alignParentEnd="true"
-        tools:text="8.7"
-        android:textColor="@android:color/black"
-        android:textSize="14sp"
-        android:layout_marginEnd="10dp"/>
+        <TextView
+            android:id="@+id/tv_movie_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/iv_logo"
+            tools:text="Cruella"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:layout_marginStart="8dp"/>
 
-    <TextView
-        android:id="@+id/tv_overview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/tv_release_date"
-        android:layout_alignBottom="@+id/iv_logo"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="0dp"
-        android:layout_toEndOf="@+id/iv_logo"
-        android:ellipsize="end"
-        android:textColor="@android:color/black"
-        android:textSize="14sp"
-        tools:text="In 1970s London amidst the punk rock revolution, a young grifter named Estella is determined to make a name for herself with her designs. She befriends a pair of young thieves who appreciate her appetite for mischief, and together they are able to build a life for themselves on the London streets. One day, Estella’s flair for fashion catches the eye of the Baroness von Hellman, a fashion legend who is devastatingly chic and terrifyingly haute. But their relationship sets in motion a course of events and revelations that will cause Estella to embrace her wicked side and become the raucous, fashionable and revenge-bent Cruella." />
+        <TextView
+            android:id="@+id/tv_overview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_movie_name"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="8dp"
+            android:layout_toEndOf="@+id/iv_logo"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="#333333"
+            android:textSize="14sp"
+            tools:text="In 1970s London amidst the punk rock revolution, a young grifter named Estella is determined to make a name for herself with her designs. She befriends a pair of young thieves who appreciate her appetite for mischief, and together they are able to build a life for themselves on the London streets. One day, Estella’s flair for fashion catches the eye of the Baroness von Hellman, a fashion legend who is devastatingly chic and terrifyingly haute. But their relationship sets in motion a course of events and revelations that will cause Estella to embrace her wicked side and become the raucous, fashionable and revenge-bent Cruella." />
 
-</RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_release_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/iv_logo"
+            android:layout_toEndOf="@+id/iv_logo"
+            tools:text="2021-05-26"
+            android:textColor="#333333"
+            android:textSize="14sp"
+            android:layout_marginStart="8dp"/>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@android:drawable/star_on"
+            android:layout_alignBottom="@+id/iv_logo"
+            android:layout_toStartOf="@+id/tv_rate"
+            android:layout_marginEnd="2dp"
+            app:tint="#FFC107" />
+
+        <TextView
+            android:id="@+id/tv_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/iv_logo"
+            android:gravity="right"
+            android:layout_alignParentEnd="true"
+            tools:text="8.7"
+            android:textColor="#333333"
+            android:textSize="14sp"
+            android:layout_marginEnd="8dp"/>
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.movielist.MovieListFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.movielist.MovieListFragment"
+    android:background="@android:color/white">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_movies"
@@ -11,6 +13,7 @@
         android:layout_height="match_parent"
         tools:listitem="@layout/movie_item"
         android:clipToPadding="false"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:itemCount="10"/>
 
     <ProgressBar
