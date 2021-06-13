@@ -1,5 +1,8 @@
 package com.kadirkuruca.offlinecaching.di
 
+import android.app.Application
+import androidx.room.Room
+import com.kadirkuruca.offlinecaching.data.local.MovieDatabase
 import com.kadirkuruca.offlinecaching.data.remote.MovieApi
 import com.kadirkuruca.offlinecaching.util.API_URL
 import dagger.Module
@@ -44,5 +47,12 @@ object AppModule {
     @Singleton
     fun provideMovieApi(retrofit: Retrofit): MovieApi{
         return retrofit.create(MovieApi::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideDatabase(app: Application): MovieDatabase{
+        return Room.databaseBuilder(app, MovieDatabase::class.java, "movie_database")
+            .build()
     }
 }
